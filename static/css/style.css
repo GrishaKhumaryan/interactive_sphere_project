@@ -1459,3 +1459,22 @@ header {
         text-align: center;
     }
 }
+
+/* Interactive Footer */
+#interactive-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    color: rgba(255, 255, 255, 0.5);
+    z-index: 10;
+    pointer-events: none;
+    font-size: 0.9em;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+}
+
+#interactive-footer p {
+    margin: 0;
+}
