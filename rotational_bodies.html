@@ -54,10 +54,10 @@
 
         <div class="nav-right">
             <ul class="nav-links">
-                <li onclick="location.href='index.html'" data-i18n="nav_sphere">🌐 Գունդ</li>
+                <li onclick="location.href='index.html'" data-i18n="nav_sphere">Գունդ</li>
                 <li onclick="showPage('theory')" data-i18n="nav_theory">Տեսություն</li>
                 <li onclick="showPage('applications')" data-i18n="nav_apps">Կիրառություններ</li>
-                <li onclick="showPage('calculator')" data-i18n="nav_calc">Հաշվիչ</ li>
+                <li onclick="showPage('calculator')" data-i18n="nav_calc">Հաշվիչ</li>
                 <li onclick="showPage('models')" data-i18n="nav_models">Մոդելներ</li>
             </ul>
 
@@ -229,52 +229,13 @@
     <!-- Footer -->
     <footer>
         <p data-i18n="footer_copy">&copy; 2025 Rotational Solids Project. All Rights Reserved.</p>
-        <p data-i18n="footer_created">Created by <strong>Antigravity AI</strong></p>
+        <p data-i18n="footer_created">Created by Karen Poghosyan and Grisha Khumaryan</p>
     </footer>
+
 
     <script src="static/js/rotational_script.js"></script>
 
-    <script>
-        // Calculator keypad functions
-        let activeInput = null;
 
-        document.addEventListener('click', (e) => {
-            if (e.target.matches('#calcInputs input')) {
-                activeInput = e.target;
-            }
-        });
-
-        window.insertToInput = function (value) {
-            if (!activeInput) {
-                activeInput = document.querySelector('#calcInputs input');
-            }
-            if (activeInput) {
-                const cursorPos = activeInput.selectionStart;
-                const currentValue = activeInput.value;
-                activeInput.value = currentValue.slice(0, cursorPos) + value + currentValue.slice(cursorPos);
-                activeInput.selectionStart = activeInput.selectionEnd = cursorPos + value.length;
-                activeInput.focus();
-            }
-        };
-
-        window.clearCurrentInput = function () {
-            if (activeInput) {
-                activeInput.value = '';
-                activeInput.focus();
-            }
-        };
-
-        const originalUpdateCalcInputs = window.updateCalcInputs;
-        window.updateCalcInputs = function () {
-            if (originalUpdateCalcInputs) {
-                originalUpdateCalcInputs();
-                setTimeout(() => {
-                    activeInput = document.querySelector('#calcInputs input');
-                    if (activeInput) activeInput.focus();
-                }, 50);
-            }
-        };
-    </script>
 </body>
 
 </html>

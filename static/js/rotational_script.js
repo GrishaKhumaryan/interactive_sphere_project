@@ -288,7 +288,7 @@ const translations = {
         nav_apps: "Կիրառություններ",
         nav_calc: "Հաշվիչ",
         nav_models: "Մոդելներ",
-        nav_sphere: "🌐 Գունդ",
+        nav_sphere: "Գունդ",
         theory_title: "Պտտական Մարմիններ",
         theory_intro: "Պտտական մարմինները երկրաչափության հիմնասյուներից են...",
         apps_title: "Օպտիմալ Կիրառություններ Կյանքում",
@@ -315,8 +315,7 @@ const translations = {
         info_side_area: "$S_k$: ",
         info_total_area: "$S_l$: ",
         info_volume: "$V$: ",
-        info_surface: "Մակերևույթի մակերես:"
-        ,
+        info_surface: "Մակերևույթի մակերես:",
         footer_copy: "&copy; 2025 «Պտտական Մարմիններ» Նախագիծ. Բոլոր իրավունքները պաշտպանված են.",
         footer_created: "Ստեղծված է Կարեն Պողոսյանի և Գրիշա Խումարյանի կողմից"
     },
@@ -325,7 +324,7 @@ const translations = {
         nav_apps: "Применения",
         nav_calc: "Калькулятор",
         nav_models: "Модели",
-        nav_sphere: "🌐 Сфера",
+        nav_sphere: "Сфера",
         theory_title: "Тела Вращения",
         theory_intro: "Тела вращения — классические объекты геометрии и физики...",
         apps_title: "Оптимальные Применения",
@@ -352,8 +351,7 @@ const translations = {
         info_side_area: "$S_k$: ",
         info_total_area: "$S_l$: ",
         info_volume: "$V$: ",
-        info_surface: "Площадь поверхности:"
-        ,
+        info_surface: "Площадь поверхности:",
         footer_copy: '&copy; 2025 Проект "Тела Вращения". Все права защищены.',
         footer_created: "Создано: Карен Погосян и Гриша Хумарян"
     },
@@ -362,7 +360,7 @@ const translations = {
         nav_apps: "Applications",
         nav_calc: "Calculator",
         nav_models: "Models",
-        nav_sphere: "🌐 Sphere",
+        nav_sphere: "Sphere",
         theory_title: "Solids of Revolution",
         theory_intro: "Solids of revolution are fundamental geometric objects...",
         apps_title: "Optimal Applications",
@@ -389,12 +387,12 @@ const translations = {
         info_side_area: "$S_k$: ",
         info_total_area: "$S_l$: ",
         info_volume: "$V$: ",
-        info_surface: "Surface Area:"
-        ,
+        info_surface: "Surface Area:",
         footer_copy: '&copy; 2025 "Rotational Solids" Project. All Rights Reserved.',
         footer_created: "Created by Karen Poghosyan and Grisha Khumaryan"
     }
 };
+
 
 let currentLang = 'hy';
 
@@ -1653,4 +1651,43 @@ window.onload = function () {
     setTimeout(() => {
         try { const btn = document.querySelector('.calc-btn'); if (btn) btn.style.animation = 'none'; } catch (e) { }
     }, 6000);
+};
+// --- Calculator Keypad Logic ---
+let activeInput = null;
+
+document.addEventListener('click', (e) => {
+    if (e.target.matches('#calcInputs input')) {
+        activeInput = e.target;
+    }
+});
+
+window.insertToInput = function (value) {
+    if (!activeInput) {
+        activeInput = document.querySelector('#calcInputs input');
+    }
+    if (activeInput) {
+        const cursorPos = activeInput.selectionStart;
+        const currentValue = activeInput.value;
+        activeInput.value = currentValue.slice(0, cursorPos) + value + currentValue.slice(cursorPos);
+        activeInput.selectionStart = activeInput.selectionEnd = cursorPos + value.length;
+        activeInput.focus();
+    }
+};
+
+window.clearCurrentInput = function () {
+    if (activeInput) {
+        activeInput.value = '';
+        activeInput.focus();
+    }
+};
+
+const originalUpdateCalcInputs = window.updateCalcInputs;
+window.updateCalcInputs = function () {
+    if (originalUpdateCalcInputs) {
+        originalUpdateCalcInputs();
+        setTimeout(() => {
+            activeInput = document.querySelector('#calcInputs input');
+            if (activeInput) activeInput.focus();
+        }, 50);
+    }
 };
