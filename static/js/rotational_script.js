@@ -1572,14 +1572,22 @@ window.toggleModelUI = function (show) {
     const ui = document.querySelector('.model-ui');
     const openBtn = document.getElementById('openModelUI');
     if (!ui) return;
-    if (typeof show === 'undefined') show = (ui.style.display === 'none');
+
+    // If show is undefined, toggle based on current state
+    if (typeof show === 'undefined') {
+        show = !ui.classList.contains('active');
+    }
+
     if (show) {
-        ui.style.display = '';
+        ui.classList.add('active');
+        ui.style.display = 'block';
         if (openBtn) openBtn.style.display = 'none';
     } else {
+        ui.classList.remove('active');
         ui.style.display = 'none';
         if (openBtn) openBtn.style.display = 'flex';
     }
+
     // ensure renderer updates after layout change
     setTimeout(() => { handleResize(); if (window.adjustPagePadding) adjustPagePadding(); }, 120);
 };
@@ -1592,6 +1600,17 @@ window.onload = function () {
 
     // Ensure canvas sizes correctly after initial layout
     setTimeout(handleResize, 150);
+
+    // Initialize model UI state for mobile (hide by default on small screens)
+    if (window.innerWidth <= 900) {
+        const ui = document.querySelector('.model-ui');
+        const openBtn = document.getElementById('openModelUI');
+        if (ui) {
+            ui.classList.remove('active');
+            ui.style.display = 'none';
+        }
+        if (openBtn) openBtn.style.display = 'flex';
+    }
 
     // Populate and wire language select
     const langSelect = document.getElementById('langSelect');

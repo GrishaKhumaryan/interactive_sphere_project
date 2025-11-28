@@ -432,6 +432,7 @@ h1 {
     margin-bottom: 60px;
     background: linear-gradient(45deg, #ff00cc, #333399, #ff00cc);
     background-size: 200% auto;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradientFlow 3s linear infinite;
@@ -445,6 +446,7 @@ h1 {
 [data-theme="dark"] h1 {
     background: linear-gradient(45deg, #ea80fc, #8c9eff, #ea80fc);
     background-size: 200% auto;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradientFlow 3s linear infinite;
@@ -514,7 +516,7 @@ h1 {
     overflow: hidden;
     cursor: pointer;
     animation: slideInUp 0.8s ease-out backwards;
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     position: relative;
 }
 
@@ -685,19 +687,25 @@ h1 {
     position: fixed;
     right: 16px;
     bottom: 18px;
-    width: 54px;
-    height: 54px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--accent), var(--primary));
     color: #fff;
     border: none;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     display: none;
     align-items: center;
     justify-content: center;
     z-index: 2006;
-    /* keep open button above canvas when visible */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.open-model-ui:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 /* Show open button only on small screens */
@@ -709,6 +717,15 @@ h1 {
     .open-model-ui {
         display: flex;
     }
+
+    /* Hide model UI by default on mobile, show open button */
+    .model-ui {
+        display: none;
+    }
+
+    .model-ui.active {
+        display: block;
+    }
 }
 
 @media (min-width: 901px) {
@@ -718,6 +735,10 @@ h1 {
 
     .open-model-ui {
         display: none;
+    }
+
+    .model-ui {
+        display: block !important;
     }
 }
 
@@ -878,6 +899,12 @@ footer p {
         font-size: 3rem;
     }
 
+    /* Clean thin borders for app cards on mobile */
+    .app-card {
+        border: 1px solid rgba(156, 39, 176, 0.3);
+        border-radius: 16px;
+    }
+
     /* Models: make controls flow above canvas on small screens */
     #models {
         position: relative;
@@ -956,6 +983,12 @@ footer p {
     .app-card-img {
         height: 120px;
         font-size: 2.2rem;
+    }
+
+    /* Thinner borders for very small screens */
+    .app-card {
+        border: 1px solid rgba(156, 39, 176, 0.25);
+        border-radius: 12px;
     }
 
     .model-ui {
@@ -1074,6 +1107,7 @@ footer p {
         font-size: 0.95rem;
     }
 }
+
 /* --- Mobile Menu Styles --- */
 
 /* Hide hamburger on desktop */
@@ -1102,7 +1136,8 @@ footer p {
     visibility: hidden;
     transition: all 0.3s ease;
     display: flex;
-    justify-content: flex-end; /* Slide from right */
+    justify-content: flex-end;
+    /* Slide from right */
 }
 
 .mobile-menu-overlay.active {
@@ -1116,7 +1151,7 @@ footer p {
     height: 100%;
     background: var(--bg-nav);
     padding: 20px;
-    box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
     transform: translateX(100%);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
@@ -1150,7 +1185,7 @@ footer p {
 .mobile-menu-links li {
     font-size: 1.2rem;
     padding: 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
     transition: background 0.2s;
     border-radius: 8px;
@@ -1162,7 +1197,7 @@ footer p {
 
 .mobile-menu-links li:hover,
 .mobile-menu-links li:active {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .mobile-menu-links li i {
@@ -1176,9 +1211,9 @@ footer p {
     .hamburger-btn {
         display: block;
     }
-    
+
     /* Hide the old mobile select if it still exists or overrides */
     #mobileNav {
-        display: none !important; 
+        display: none !important;
     }
 }
