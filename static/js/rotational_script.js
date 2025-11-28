@@ -287,7 +287,6 @@ const translations = {
         nav_theory: "Տեսություն",
         nav_apps: "Կիրառություններ",
         nav_calc: "Հաշվիչ",
-        nav_calc: "Հաշվիչ",
         nav_models: "Մոդելներ",
         nav_sphere: "🌐 Գունդ",
         theory_title: "Պտտական Մարմիններ",
@@ -325,7 +324,6 @@ const translations = {
         nav_theory: "Теория",
         nav_apps: "Применения",
         nav_calc: "Калькулятор",
-        nav_calc: "Калькулятор",
         nav_models: "Модели",
         nav_sphere: "🌐 Сфера",
         theory_title: "Тела Вращения",
@@ -362,7 +360,6 @@ const translations = {
     en: {
         nav_theory: "Theory",
         nav_apps: "Applications",
-        nav_calc: "Calculator",
         nav_calc: "Calculator",
         nav_models: "Models",
         nav_sphere: "🌐 Sphere",
