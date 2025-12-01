@@ -5,6 +5,31 @@ const translations = {
         "subtitle": "Մաթեմատիկական ճշգրտություն և օրինակներ կյանքից",
         "nav_theory": "📚 Տեսություն",
         "nav_interactive": "🎮 Ինտերակտիվ Մոդել",
+        "nav_calc": "🧮 Հաշվիչ",
+
+        "nav_apps": "🚀 Կիրառություններ",
+        "nav_models": "Մոդելներ",
+        "nav_sphere": "🌐 Գունդ",
+        "theory_title": "Պտտական Մարմիններ",
+        "theory_intro": "Պտտական մարմինները երկրաչափության հիմնասյուներից են...",
+        "apps_title": "Օպտիմալ Կիրառություններ Կյանքում",
+        "apps_intro": "Ինչու՞ են առօրյա իրերը հենց այսպիսին?",
+        "calc_title": "Խելացի Հաշվիչ",
+        "calc_select": "Ընտրեք Մարմինը.",
+        "model_lab": "3D Լաբորատորիա",
+        "model_shape": "Մարմին:",
+        "model_color": "Գույն:",
+        "model_mode": "Ռեժիմ:",
+        "btn_wireframe": "Ցանցային / Հոծ",
+        "model_slice": "Հատում:",
+        "model_move": "Տեղաշարժ:",
+        "info_slant": "Ծնորդ (l):",
+        "info_side_area": "$S_k$: ",
+        "info_total_area": "$S_l$: ",
+        "info_volume": "$V$: ",
+        "info_surface": "Մակերևույթի մակերես:",
+        "footer_copy": "&copy; 2025 «Պտտական Մարմիններ» Նախագիծ. Բոլոր իրավունքները պաշտպանված են.",
+        "footer_created": "Ստեղծված է Կարեն Պողոսյանի և Գրիշա Խումարյանի կողմից",
         "intro_text": "Այս ամբողջական ուղեցույցը մանրամասնորեն ներկայացնում է գունդը, գնդային մակերևույթը և դրանց հիմնական մասերը՝ զուգորդելով խիստ մաթեմատիկական սահմանումները առօրյա կյանքից վերցված պարզ և հասկանալի օրինակների հետ։",
         "section_sphere_surface": "1. Գնդային մակերևույթ (Սֆերա)",
         "definition": "📐 Սահմանում",
@@ -60,7 +85,7 @@ const translations = {
         "point_2": "Բոլոր գնդային մասերի բանաձևերը կախված են շառավիղից (R) և բարձրությունից (h)",
         "point_3": "Գնդային ձևերը լայնորեն տարածված են բնության և տեխնոլոգիաների մեջ",
         "point_4": "Մաթեմատիկական ճշգրտությունը և իրական օրինակները միասին օգնում են ավելի լավ հասկանալ այս հասկացությունները",
-        "footer": "&copy; 2025 | Ստեղծված է Գրիշա Խումարյանի և Կարեն Պողոսյանի կողմից | Գունդ և նրա մասերը",
+        "footer": "&copy; 2025 | Ստեղծված է Կարեն Պողոսյանի և Գրիշա Խումարյանի կողմից | Գունդ և նրա մասերը",
 
         // Bibliography
         "bibliography_title": "📚 Օգտագործված գրականություն",
@@ -97,7 +122,36 @@ const translations = {
         "slicing_legend": "✏️ Հատույթի Կառավարում",
         "label_slice_pos": "Հարթության Դիրք",
         "slice_on": "Հատույթ ✓",
-        "slice_off": "✂️ Հատույթ"
+        "slice_off": "✂️ Հատույթ",
+
+        // Calculator
+        "calc_header": "🧮 Խելացի Հաշվիչ",
+        "calc_subtitle": "Հաշվարկներ ճշգրիտ $\\pi$-ով",
+        "apps_header": "🚀 Կիրառություններ",
+        "apps_subtitle": "Ինչու՞ են առօրյա իրերը հենց այսպիսին",
+        "calc_select_shape": "Ընտրեք Մարմինը",
+        "calc_waiting": "Արդյունքը կհայտնվի այստեղ...",
+        "opt_cyl": "Գլան",
+        "opt_cone": "Կոն",
+        "opt_frustum": "Հատած Կոն",
+        "opt_sphere": "Գունդ",
+        "opt_segment": "Գնդային Սեգմենտ",
+        "opt_sector": "Գնդային Սեկտոր",
+        "opt_layer": "Գնդային Շերտ",
+        "opt_zone": "Գնդային Գոտի",
+        "btn_calc": "Հաշվել",
+        "label_radius": "Շառավիղ (R)",
+        "label_height": "Բարձրություն (H)",
+        "label_small_radius": "Փոքր Շառավիղ (r)",
+        "label_height_part": "Բարձրություն (h)",
+        "label_r1": "Վերին Շառավիղ (r1)",
+        "label_r2": "Ստորին Շառավիղ (r2)",
+        "error_invalid_input": "Խնդրում ենք մուտքագրել ճիշտ թվեր",
+        "volume": "Ծավալ (V)",
+        "surface_area": "Մակերևույթի Մակերես (S)",
+        "lateral_surface": "Կողմնային Մակերևույթ (S_lat)",
+        "total_surface": "Լրիվ Մակերևույթ (S_total)",
+        "slant_height": "Ծնորդ (l)"
     },
     en: {
         "page_title": "Sphere and its Parts - Complete Guide",
@@ -105,6 +159,31 @@ const translations = {
         "subtitle": "Mathematical precision and real-life examples",
         "nav_theory": "📚 Theory",
         "nav_interactive": "🎮 Interactive Model",
+        "nav_calc": "🧮 Calculator",
+        "nav_rotational": "🔄 Rotational Bodies",
+        "nav_apps": "🚀 Applications",
+        "nav_models": "Models",
+        "nav_sphere": "🌐 Sphere",
+        "theory_title": "Solids of Revolution",
+        "theory_intro": "Solids of revolution are fundamental geometric objects...",
+        "apps_title": "Optimal Applications",
+        "apps_intro": "Why do everyday objects look like this?",
+        "calc_title": "Smart Calculator",
+        "calc_select": "Select Shape.",
+        "model_lab": "3D Laboratory",
+        "model_shape": "Shape:",
+        "model_color": "Color:",
+        "model_mode": "Mode:",
+        "btn_wireframe": "Wireframe / Solid",
+        "model_slice": "Slicing:",
+        "model_move": "Move:",
+        "info_slant": "Slant (l):",
+        "info_side_area": "$S_k$: ",
+        "info_total_area": "$S_l$: ",
+        "info_volume": "$V$: ",
+        "info_surface": "Surface Area:",
+        "footer_copy": "&copy; 2025 \"Rotational Solids\" Project. All Rights Reserved.",
+        "footer_created": "Created by Karen Poghosyan and Grisha Khumaryan",
         "intro_text": "This complete guide details the sphere, the spherical surface, and their main parts, combining strict mathematical definitions with simple and understandable examples from everyday life.",
         "section_sphere_surface": "1. Spherical Surface (Sphere)",
         "definition": "📐 Definition",
@@ -160,7 +239,7 @@ const translations = {
         "point_2": "Formulas for all spherical parts depend on radius (R) and height (h)",
         "point_3": "Spherical shapes are widely common in nature and technology",
         "point_4": "Mathematical precision and real examples together help better understand these concepts",
-        "footer": "&copy; 2025 | Created by Grisha Khumaryan and Karen Poghosyan | Sphere and its Parts",
+        "footer": "&copy; 2025 | Created by Karen Poghosyan and Grisha Khumaryan | Sphere and its Parts",
 
         // Bibliography
         "bibliography_title": "📚 References",
@@ -197,7 +276,34 @@ const translations = {
         "slicing_legend": "✏️ Slicing Control",
         "label_slice_pos": "Plane Position",
         "slice_on": "Slice ✓",
-        "slice_off": "✂️ Slice"
+        "slice_off": "✂️ Slice",
+
+        // Calculator
+        "calc_header": "🧮 Smart Calculator",
+        "calc_subtitle": "Calculations with exact $\\pi$",
+        "calc_select_shape": "Select Shape",
+        "calc_waiting": "Result will appear here...",
+        "opt_cyl": "Cylinder",
+        "opt_cone": "Cone",
+        "opt_frustum": "Frustum",
+        "opt_sphere": "Sphere",
+        "opt_segment": "Spherical Segment",
+        "opt_sector": "Spherical Sector",
+        "opt_layer": "Spherical Layer",
+        "opt_zone": "Spherical Zone",
+        "btn_calc": "Calculate",
+        "label_radius": "Radius (R)",
+        "label_height": "Height (H)",
+        "label_small_radius": "Small Radius (r)",
+        "label_height_part": "Height (h)",
+        "label_r1": "Top Radius (r1)",
+        "label_r2": "Bottom Radius (r2)",
+        "error_invalid_input": "Please enter valid numbers",
+        "volume": "Volume (V)",
+        "surface_area": "Surface Area (S)",
+        "lateral_surface": "Lateral Surface (S_lat)",
+        "total_surface": "Total Surface (S_total)",
+        "slant_height": "Slant Height (l)"
     },
     ru: {
         "page_title": "Сфера и её части - Полное руководство",
@@ -205,6 +311,31 @@ const translations = {
         "subtitle": "Математическая точность и примеры из жизни",
         "nav_theory": "📚 Теория",
         "nav_interactive": "🎮 Интерактивная Модель",
+        "nav_calc": "🧮 Калькулятор",
+        "nav_rotational": "🔄 Тела вращения",
+        "nav_apps": "🚀 Приложения",
+        "nav_models": "Модели",
+        "nav_sphere": "🌐 Сфера",
+        "theory_title": "Тела Вращения",
+        "theory_intro": "Тела вращения — классические объекты геометрии и физики...",
+        "apps_title": "Оптимальные Применения",
+        "apps_intro": "Почему повседневные вещи выглядят именно так?",
+        "calc_title": "Умный Калькулятор",
+        "calc_select": "Выберите Фигуру.",
+        "model_lab": "3D Лаборатория",
+        "model_shape": "Фигура:",
+        "model_color": "Цвет:",
+        "model_mode": "Режим:",
+        "btn_wireframe": "Каркас / Сплошной",
+        "model_slice": "Сечение:",
+        "model_move": "Перемещение:",
+        "info_slant": "Образующая (l):",
+        "info_side_area": "$S_k$: ",
+        "info_total_area": "$S_l$: ",
+        "info_volume": "$V$: ",
+        "info_surface": "Площадь поверхности:",
+        "footer_copy": "&copy; 2025 Проект \"Тела Вращения\". Все права защищены.",
+        "footer_created": "Создано: Карен Погосян и Гриша Хумарян",
         "intro_text": "Это полное руководство подробно описывает шар, сферическую поверхность и их основные части, сочетая строгие математические определения с простыми и понятными примерами из повседневной жизни.",
         "section_sphere_surface": "1. Сферическая поверхность (Сфера)",
         "definition": "📐 Определение",
@@ -260,7 +391,7 @@ const translations = {
         "point_2": "Формулы для всех частей шара зависят от радиуса (R) и высоты (h)",
         "point_3": "Сферические формы широко распространены в природе и технологиях",
         "point_4": "Математическая точность и реальные примеры вместе помогают лучше понять эти концепции",
-        "footer": "&copy; 2025 | Создано: Гриша Хумарян и Карен Погосян | Сфера и её части",
+        "footer": "&copy; 2025 | Создано: Карен Погосян и Гриша Хумарян | Сфера и её части",
 
         // Bibliography
         "bibliography_title": "📚 Использованная литература",
@@ -297,7 +428,34 @@ const translations = {
         "slicing_legend": "✏️ Управление Сечением",
         "label_slice_pos": "Позиция Плоскости",
         "slice_on": "Сечение ✓",
-        "slice_off": "✂️ Сечение"
+        "slice_off": "✂️ Сечение",
+
+        // Calculator
+        "calc_header": "🧮 Умный Калькулятор",
+        "calc_subtitle": "Вычисления с точным $\\pi$",
+        "calc_select_shape": "Выберите Фигуру",
+        "calc_waiting": "Результат появится здесь...",
+        "opt_cyl": "Цилиндр",
+        "opt_cone": "Конус",
+        "opt_frustum": "Усеченный Конус",
+        "opt_sphere": "Сфера",
+        "opt_segment": "Сферический Сегмент",
+        "opt_sector": "Сферический Сектор",
+        "opt_layer": "Сферический Слой",
+        "opt_zone": "Сферический Пояс",
+        "btn_calc": "Рассчитать",
+        "label_radius": "Радиус (R)",
+        "label_height": "Высота (H)",
+        "label_small_radius": "Малый Радиус (r)",
+        "label_height_part": "Высота (h)",
+        "label_r1": "Верхний Радиус (r1)",
+        "label_r2": "Нижний Радиус (r2)",
+        "error_invalid_input": "Пожалуйста, введите правильные числа",
+        "volume": "Объем (V)",
+        "surface_area": "Площадь Поверхности (S)",
+        "lateral_surface": "Боковая Поверхность (S_lat)",
+        "total_surface": "Полная Поверхность (S_total)",
+        "slant_height": "Образующая (l)"
     }
 };
 
@@ -322,12 +480,16 @@ function setLanguage(lang) {
     // Update dynamic buttons if needed
     const sliceBtn = document.getElementById('slice-btn');
     if (sliceBtn) {
-        // Check current state
-        const isSlicing = document.getElementById('slicing-controls') && !document.getElementById('slicing-controls').classList.contains('hidden');
-        // Actually, we should rely on the renderer state, but here we just update the text based on current text to infer state, or better yet, just update the "active" text if we knew it.
-        // For simplicity, let's just update the base text, but slice button changes text.
-        // We can handle this in main.js or here if we expose state.
-        // Let's leave dynamic buttons for main.js to handle or just update them here if they match standard keys.
+        // ... logic for slice button ...
+    }
+
+    // Trigger MathJax re-render if available
+    if (window.MathJax) {
+        if (window.MathJax.typesetPromise) {
+            window.MathJax.typesetPromise();
+        } else if (window.MathJax.Hub) {
+            window.MathJax.Hub.Queue(["Typeset", window.MathJax.Hub]);
+        }
     }
 }
 
